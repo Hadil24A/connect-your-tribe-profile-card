@@ -1,14 +1,25 @@
 <%- include('./partials/head') %>
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
 
-  <p><%= data.name %></p>
+<main>
+  <div class="card-front"> 
+    <div class="big-text">
+      <img src="../images/Hadil.jpg" alt="Hadil">
+      <h1><%= data.name %></h1>
+    </div>
+    
+    <p><%= data.surname %></p>
+    </div>
 
-  <footer></footer>
-</article>
+  <div class="card-back"> 
+    <div class="big-text">
+      <div class="more-info">
+
+      </div>
+      <h2><%= data.bio %></h2>
+    </div>
+  </div>
+</main>
+
 
 <%- include('./partials/foot') %>
