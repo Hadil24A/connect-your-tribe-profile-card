@@ -80,10 +80,11 @@ main {
 
 .card {
   perspective: 999px;
+  cursor: pointer;
 }
 
 .card-inner {
-  transition: all 1.5s cubic-bezier(0.7, -.5, 0.3, 1.8);
+  transition: all 1.2s cubic-bezier(.58,.22,.37,.85);
   transform-style: preserve-3d;
 }
 
@@ -108,6 +109,10 @@ main {
   z-index: -1;
 }
 
+#H {
+  position: absolute;top: 1em; right: 1em;
+}
+
 img {
   border: solid 4px var(--clr-primary-4);
   height: 24em;
@@ -124,6 +129,14 @@ img {
   height: 24em;
   margin: 0.2em;
   width: 24.05em;
+}
+
+.more-info p {
+  font-family: "heebo";
+  font-size: 1.3em;
+  margin: 1em;
+  max-width: 20em;
+  color: var(--clr-light-4);
 }
 
 h1, h2 {
@@ -159,10 +172,14 @@ footer {
   gap: 0.5em;
 }
 
-a:first-child {
+a:nth-of-type(1) {
   padding-top: 0.2em;
 }
 
-a:last-child {
+a:nth-of-type(2){
   padding: 0.5em;
+}
+
+a:nth-of-type(3) {
+  padding-right: 1em;
 }
