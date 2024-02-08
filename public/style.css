@@ -68,16 +68,43 @@ main {
   flex-direction: row;
   gap: 3em;
   justify-content: center;
-  margin: 3em;
+  margin: 5em;
 }
 }
 
-.card-front, .card-back{
-  background-color: var(--clr-primary-1);
-  border: solid 5px var(--clr-primary-1);
+.card, .card-inner {
+  position: relative;
+  height: 40em;
+  width: 30em;
+}
+
+.card {
+  perspective: 999px;
+}
+
+.card-inner {
+  transition: all 1.5s cubic-bezier(0.7, -.5, 0.3, 1.8);
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back{  
+  backface-visibility: hidden;
+  background-color: var(--clr-primary-2);
+  border: solid 5px var(--clr-primary-2);
   height: 35em;
   position: relative;
   width: 25em;
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute; top: 0em;
+  z-index: -1;
 }
 
 img {
@@ -93,10 +120,6 @@ img {
   border: solid 4px var(--clr-primary-4);
   clip-path: polygon(0 0, 100% 0%, 100% 98%, 0 86%);
   background: var(--clr-primary-3);
-  /* 
-  height: 25em;
-  margin: 0.3em 0.3em 0em 0.3em;
-  width: 24em; */
   height: 24em;
   margin: 0.2em;
   width: 24.05em;
@@ -108,6 +131,7 @@ h1, h2 {
   font-family: "reins";
   font-size: 6em;
   margin: 0em 0.5em 0em 0.05em;
+  padding-left: 0.5em;
   text-transform: uppercase;
   width: 3.98em;
 }
@@ -119,5 +143,25 @@ background-color: var(--clr-dark-5);
 p {
   color: var(--clr-primary-5);
   font-size: 1.59em;
+  padding-top: 0.3em;
   position: absolute; right: 0.3em;
+}
+
+footer {
+  width: 100vw;
+  background: var(--clr-primary-3);
+  position: absolute; bottom: -5em;
+  padding: 1em;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5em;
+}
+
+a:first-child {
+  padding-top: 0.2em;
+}
+
+a:last-child {
+  padding: 0.5em;
 }
