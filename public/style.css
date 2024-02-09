@@ -145,7 +145,7 @@ h1, h2 {
   font-family: "reins";
   font-size: 6em;
   margin: 0em 0.5em 0em 0.05em;
-  padding-left: 0.5em;
+  padding-left: 0.9em;
   text-transform: uppercase;
   width: 3.98em;
 }
@@ -157,8 +157,11 @@ background-color: var(--clr-dark-5);
 p {
   color: var(--clr-primary-5);
   font-size: 1.59em;
+  font-family: "heebo";
   padding-top: 0.3em;
   position: absolute; right: 0.3em;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 footer {
