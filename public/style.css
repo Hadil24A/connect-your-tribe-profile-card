@@ -137,6 +137,7 @@ img {
   margin: 1em;
   max-width: 20em;
   color: var(--clr-light-4);
+  text-transform: none;
 }
 
 h1, h2 {
