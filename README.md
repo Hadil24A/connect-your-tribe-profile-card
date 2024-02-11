@@ -1,7 +1,7 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Profile Card
+<img src= "https://github.com/Hadil24A/connect-your-tribe-profile-card/assets/144008714/75170965-b4b8-4545-9c16-1c7e0d1456e6" width="500px">
 
 ## Inhoudsopgave
 
