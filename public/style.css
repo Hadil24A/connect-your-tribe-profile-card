@@ -10,7 +10,7 @@
   --clr-primary-1: #f27b52;
   --clr-light-1: #f6a78d;
   --clr-dark-1: #ed511d;
-  --clr-primary-2: #ed5629;
+  --clr-primary-2: #d65663;
   --clr-light-2: #f28969;
   --clr-dark-2: #ce3e12;
   --clr-primary-3: #294023;
@@ -35,47 +35,53 @@
 }
 
 body {
+  align-items: center;
+  animation: draaien 30s infinite linear;
+  background-image: repeating-conic-gradient(from var(--angle),#d65663 0deg,#f2bc62, #7cd2b7,#fce6c1 30deg );
   color: var(--clr-light-4);
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
-  overflow-x: hidden;
+  margin: 0;
+  overflow: hidden;
+  @supports (background: conic-gradient(in oklch, red 0 0)) {
+    background-image: repeating-conic-gradient(
+      from var(--angle) in oklch,
+      #d65663 0deg,
+      #f2bc62,
+      #7cd2b7,
+      #fce6c1 30deg
+    );
+  }  
+}
+
+@property --angle {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 0deg;
+}
+
+@keyframes draaien {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }
 
 main {
-  align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 3em;
   justify-content: center;
-  margin: 3em;
-}
-
-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-@media (min-width:960px) { 
-main {
   align-items: center;
-  display: flex;
-  flex-direction: row;
-  gap: 3em;
-  justify-content: center;
-  margin: 5em;
-}
+  height: 100vh;
+  width: 100vw;
 }
 
 .card, .card-inner {
   position: relative;
-  height: 40em;
-  width: 30em;
+  height: max-content;
+  width: max-content;
 }
 
 .card {
@@ -97,6 +103,7 @@ main {
   background-color: var(--clr-primary-2);
   border: solid 5px var(--clr-primary-2);
   border-radius: 2%;
+  box-shadow: 0 3px 10px rgb(10, 9, 8);
   height: 35em;
   position: relative;
   width: 25em;
@@ -172,25 +179,3 @@ p {
   text-transform: uppercase;
 }
 
-footer {
-  width: 100vw;
-  background: var(--clr-primary-3);
-  position: absolute; bottom: -5em;
-  padding: 1em;
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5em;
-}
-
-a:nth-of-type(1) {
-  padding-top: 0.2em;
-}
-
-a:nth-of-type(2){
-  padding: 0.5em;
-}
-
-a:nth-of-type(3) {
-  padding-right: 1em;
-}
